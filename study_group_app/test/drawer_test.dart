@@ -1,6 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:provider/provider.dart';
 import 'package:study_group_app/screens/home/drawer.dart';
 import 'mock/mock_data.dart';
 import 'package:flutter/material.dart';
