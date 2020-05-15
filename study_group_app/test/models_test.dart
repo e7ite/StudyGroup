@@ -29,7 +29,6 @@ void main() {
     test('User fromFirestore, missing courses', () {
       // Create mock DocumentSnapshots
       var userSnap = DocumentSnapshotMock();
-
       userSnap.mockData = Map<String, dynamic>.from({
         'userName': 'testuser',
         'email': 'testuser@gmail.com',
@@ -39,6 +38,7 @@ void main() {
 
       var user = User.fromFirestore(userSnap);
 
+      // Shouldn't be any errors even if Firestore returns null for some fields
       expect(user.uid, 'uid');
       expect(user.userName, 'testuser');
       expect(user.email, 'testuser@gmail.com');
@@ -49,7 +49,7 @@ void main() {
   });
 
   group('Group class', () {
-    test('Group fromFirestore', () {
+    test('Group fromFirestore, full data', () {
       var groupSnap = DocumentSnapshotMock();
 
       // Mock return data from Firestore
@@ -76,6 +76,28 @@ void main() {
       expect(group.endTime, '14:30');
       expect(group.location, 'Library');
       expect(group.course, 'CSCI-500');
+    });
+
+    test('Group fromFirestore, missing data', () {
+      // Create Mock data from Firestore
+      var groupSnap = DocumentSnapshotMock();
+      groupSnap.mockData = Map<String, dynamic>.from({
+        'name': 'TestGroup',
+        'day': 'Monday',
+      });
+
+      var group = Group.fromFirestore(groupSnap);
+      expect(group.id, 'uid');
+      expect(group.name, 'TestGroup');
+      expect(group.memberIds, []);
+      expect(group.maxMembers, 0);
+      expect(group.day, 'Monday');
+      expect(group.startTime, '');
+      expect(group.endTime, '');
+      expect(group.location, '');
+      expect(group.course, '');
+
+      // Shouldn't be any errors even if Firestore returns null for some fields
     });
   });
 }
