@@ -4,12 +4,12 @@ import 'package:provider/provider.dart';
 import 'package:study_group_app/utilities/loading.dart';
 import 'package:flutter/material.dart';
 
-import 'find_group_test.dart';
+import 'mock/firebase_mock.dart';
 
 void main() {
   Widget makeTestableWidget({Widget child}) {
     return StreamProvider.value(
-      value: MockAuth().getUser,
+      value: AuthMock().getUser,
       child: MaterialApp(
         home: child,
       ),

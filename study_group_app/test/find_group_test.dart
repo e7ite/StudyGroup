@@ -2,18 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
 import 'package:study_group_app/screens/groups/find_group.dart';
-import 'package:mockito/mockito.dart';
-import 'package:study_group_app/services/auth.dart';
-import 'package:study_group_app/services/group_service.dart';
-
-class MockGroupProvider extends Mock implements GroupService {}
-
-class MockAuth extends Mock implements Auth {}
+import 'mock/firebase_mock.dart';
 
 void main() {
   Widget makeTestableWidget({Widget child}) {
     return StreamProvider.value(
-      value: MockAuth().getUser,
+      value: AuthMock().getUser,
       child: MaterialApp(
         home: child,
       ),

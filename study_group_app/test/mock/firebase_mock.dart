@@ -2,12 +2,17 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:mockito/mockito.dart';
 import 'package:study_group_app/services/auth.dart';
+import 'package:study_group_app/services/services.dart';
 
 class FirebaseAuthMock extends Mock implements FirebaseAuth {}
 
 class AuthResultMock extends Mock implements AuthResult {}
 
 class AuthMock extends Mock implements Auth {}
+
+class MockGroupProvider extends Mock implements GroupService {}
+
+class MockUserService extends Mock implements UserService {}
 
 class FirebaseUserMock extends Mock implements FirebaseUser {
   @override
