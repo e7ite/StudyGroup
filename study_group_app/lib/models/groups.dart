@@ -30,7 +30,7 @@ class Group {
       id: doc.documentID,
       name: map['name'] ?? '',
       memberIds: map['memberIds'] as List ?? [],
-      maxMembers: map['maxMembers'] ?? '',
+      maxMembers: map['maxMembers'] ?? 0,
       day: map['day'] ?? '',
       startTime: map['startTime'] ?? '',
       endTime: map['endTime'] ?? '',

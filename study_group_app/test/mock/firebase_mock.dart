@@ -31,5 +31,5 @@ class DocumentSnapshotMock extends Mock implements DocumentSnapshot {
   @override
   bool get exists => true;
   @override
-  String get documentID => data['documentID'];
+  String get documentID => 'uid';
 }
