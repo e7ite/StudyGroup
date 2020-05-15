@@ -6,7 +6,6 @@ class User {
   final String userName;
   final String firstName;
   final String lastName;
-  var groups;
   List<dynamic> courses;
 
   User({
@@ -15,7 +14,6 @@ class User {
     this.userName,
     this.firstName,
     this.lastName,
-    this.groups,
     this.courses,
   });
 
@@ -27,7 +25,6 @@ class User {
       userName: map['userName'] ?? '',
       firstName: map['firstName'] ?? '',
       lastName: map['lastName'] ?? '',
-      groups: map['groups'] ?? '',
       courses: map['courses'] as List ?? [],
     );
   }
