@@ -3,17 +3,19 @@ import 'package:study_group_app/services/user_service.dart';
 
 class Auth {
   // Create a local instance of our Firebase authentication instance
-  final FirebaseAuth _auth = FirebaseAuth.instance;
+  FirebaseAuth auth = FirebaseAuth.instance;
 
+  // Constructor to inject test Auth
+  Auth({this.auth});
   // Provides a stream to continually update user data from Firebase
   Stream<FirebaseUser> get getUser {
-    return _auth.onAuthStateChanged;
+    return auth.onAuthStateChanged;
   }
 
   Future signInUserWithEmail(String email, String password) async {
     try {
       // Attempt to sign in user to Firebase
-      var result = await _auth.signInWithEmailAndPassword(
+      var result = await auth.signInWithEmailAndPassword(
           email: email, password: password);
 
       // Get the Firebase User object back
@@ -30,7 +32,7 @@ class Auth {
   Future<dynamic> registerNewUser(
       String email, String password, var userdata) async {
     try {
-      var result = await _auth.createUserWithEmailAndPassword(
+      var result = await auth.createUserWithEmailAndPassword(
           email: email, password: password);
       var newUser = result.user;
 
@@ -44,16 +46,16 @@ class Auth {
   }
 
   Future<int> changeFirebaseUserEmail(String email, String curPass) async {
-    var user = await _auth.currentUser();
+    var user = await auth.currentUser();
     // Reauthenticate user before changing the email
     var credential = EmailAuthProvider.getCredential(
         email: user.email, password: curPass.trim());
     try {
       await user.reauthenticateWithCredential(credential);
     } catch (error) {
-        print('Couldnt reauthenticate user.');
-        print(error.toString());
-        return null;
+      print('Couldnt reauthenticate user.');
+      print(error.toString());
+      return null;
     }
 
     try {
@@ -67,9 +69,9 @@ class Auth {
     return 1;
   }
 
-  Future<int> changePassword(String curPassword, String newPassword) async{
-   // Create an instance of the current user. 
-    var user = await _auth.currentUser();
+  Future<int> changePassword(String curPassword, String newPassword) async {
+    // Create an instance of the current user.
+    var user = await auth.currentUser();
     // Reauthenticate user before changing password
     var credential = EmailAuthProvider.getCredential(
         email: user.email, password: curPassword.trim());
@@ -81,18 +83,17 @@ class Auth {
     }
 
     // Pass in the password to updatePassword.
-    await user.updatePassword(newPassword)
-      .then((_){
-        print('Succesfully changed password');
-      }).catchError((error){
-        print("Password can't be changed" + error.toString());
-      });
-    
+    await user.updatePassword(newPassword).then((_) {
+      print('Succesfully changed password');
+    }).catchError((error) {
+      print("Password can't be changed" + error.toString());
+    });
+
     // Return 1 if all checks pass
     return 1;
   }
 
   Future logOut() async {
-    return await _auth.signOut();
+    return await auth.signOut();
   }
 }
