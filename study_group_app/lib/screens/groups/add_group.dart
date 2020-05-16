@@ -7,8 +7,8 @@ import 'package:study_group_app/models/user.dart';
 import 'package:study_group_app/services/group_service.dart';
 
 class CreateGroup extends StatefulWidget {
-  CreateGroup({Key key, this.title}) : super(key: key);
-  final String title;
+  // CreateGroup({Key key, this.title}) : super(key: key);
+  // final String title;
 
   @override
   _CreateGroupFormState createState() => _CreateGroupFormState();

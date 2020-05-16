@@ -16,7 +16,7 @@ class Message {
     return Message(
       userEmail: map['userEmail'] ?? '',
       userName: map['userName'] ?? '',
-      time: map['time'] ?? '',
+      time: map['time'] ?? 0,
       messageText: map['messageText'] ?? '',
       groupId: map['groupId'] ?? '',
     );
