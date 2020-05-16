@@ -1,10 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:study_group_app/services/auth.dart';
+import 'package:study_group_app/services/services.dart';
 import 'package:study_group_app/utilities/style.dart';
-import 'package:study_group_app/screens/student/select_classes.dart';
 import 'package:study_group_app/screens/wrapper.dart';
 import 'package:provider/provider.dart';
-import 'package:study_group_app/models/user.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,18 +12,18 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return StreamProvider<User>.value(
+    return StreamProvider<FirebaseUser>.value(
       value: Auth().getUser,
       child: MaterialApp(
-          title: 'Study Buddy',
-          // Importing from theme/style.dart
-          theme: appTheme(),
-          // Sets the home page by calling HomePage and passing in title set above
-          //home: CourseSchedulePage(title: 'My Course Schedule'),
-          home: Wrapper(title: 'Study Buddy'),
-          routes: <String, WidgetBuilder>{
-            "/select-classes": (BuildContext context) => CourseSchedulePage(),
-          }),
+        title: 'Study Buddy',
+        // Importing from theme/style.dart
+        theme: themeData,
+        // Allows navigation to determine what to display
+        // home: BottomNavBar(),
+        home: Wrapper(),
+        // onGenerateRoute: Routes.generateRoute,
+        // initialRoute: '/',
+      ),
     );
   }
 }
