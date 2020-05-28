@@ -23,10 +23,10 @@ This was a group project among 4 students in the CSCI 430 Software Engineering c
 - Group detail page where you can view more details about the current group and have a discussion with members in the group
 
 ## Screenshots
-![](/preview/preview1.png)
-![](/preview/preview2.png)
-![](/preview/preview3.png)
-![](/preview/preview4.png)
-![](/preview/preview5.png)
-![](/preview/preview6.png)
-![](/preview/preview7.png)
+![](/study_group_app/preview/preview1.png)
+![](/study_group_app/preview/preview2.png)
+![](/study_group_app/preview/preview3.png)
+![](/study_group_app/preview/preview4.png)
+![](/study_group_app/preview/preview5.png)
+![](/study_group_app/preview/preview6.png)
+![](/study_group_app/preview/preview7.png)
