@@ -12,11 +12,11 @@ David Ayala | https://github.com/e7ite
 Lauren Rondenet | https://github.com/lrondenet
 
 ## Entrepeneurs
-Student
--------
-Adrian Whittlesey
-Connor Smith
-Elizabeth Cooper
+Student|
+-------|
+Adrian Whittlesey |
+Connor Smith |
+Elizabeth Cooper |
 
 ## Description
 This was a group project among 4 students in the CSCI 430 Software Engineering class at California State University, Chico in Spring 2020. The goal was to make an iPhone/Android application which can provide to students on campus to have a way to create and join study groups on any school subject. Students, with the help of this application, will have an easy-to-use, stylish, and effective way to prepare for exams, work on homework, and make new friends!
