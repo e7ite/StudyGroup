@@ -12,7 +12,9 @@ David Ayala | https://github.com/e7ite
 Lauren Rondenet | https://github.com/lrondenet
 
 ## Description
-This was a group project among 4 students in the CSCI 430 Software Engineering class at California State University, Chico in Spring 2020. The goal was to make an iPhone/Android application which can provide to students on campus to have a way to create and join study groups on any school subject. Students, with the help of this application, will have an easy-to-use, stylish, and effective way to prepare for exams, work on homework, and make new friends!  
+This was a group project among 4 students in the CSCI 430 Software Engineering class at California State University, Chico in Spring 2020. The goal was to make an iPhone/Android application which can provide to students on campus to have a way to create and join study groups on any school subject. Students, with the help of this application, will have an easy-to-use, stylish, and effective way to prepare for exams, work on homework, and make new friends!
+
+The coverage is low because we ran out of time to be able to implement more tests near the end of the class because we all had finals to prepare for and didn't have enough time to implement more tests 
 
 ## Notable Features
 - Login/register accounts
