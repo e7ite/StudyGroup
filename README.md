@@ -33,4 +33,3 @@ The coverage is low because we ran out of time to be able to implement more test
 ![](/study_group_app/preview/preview4.png)
 ![](/study_group_app/preview/preview5.png)
 ![](/study_group_app/preview/preview6.png)
-![](/study_group_app/preview/preview7.png)
